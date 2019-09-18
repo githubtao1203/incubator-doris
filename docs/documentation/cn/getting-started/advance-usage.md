@@ -153,7 +153,7 @@ mysql> SHOW VARIABLES LIKE "%mem_limit%";
 1 row in set (0.00 sec)
 ```
 
-> * 以上该修改为 session 级别，仅在当前连接 session 内有效。断开重连则会变回默认值。
+> * 以上修改为 session 级别，仅在当前连接 session 内有效。断开重连则会变回默认值。
 > * 如果需要修改全局变量，可以这样设置：`SET GLOBAL exec_mem_limit = 8589934592;`。设置完成后，断开 session 重新登录，参数将永久生效。
 
 ### 2.2 查询超时
@@ -225,7 +225,7 @@ mysql> select sum(table1.pv) from table1 join [shuffle] table2 where table1.site
 
 当部署多个 FE 节点时，用户可以在多个 FE 之上部署负载均衡层来实现 Doris 的高可用。
 
-一下提供一些高可用的方案：
+以下提供一些高可用的方案：
 
 **第一种**
 
